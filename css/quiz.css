@@ -1,0 +1,30 @@
+
+.center {
+	text-align: center;
+}
+
+.question-block {
+	padding: 5px;
+	margin: 10px;
+}
+
+.btn-quiz {
+	background-color: #F5F5F5;
+	border: 1px #5E5E5E solid;
+}
+
+.btn-quiz.active {
+	background-color: #DDDDDD;
+	border: 1px #5E5E5E solid;
+}
+
+
+#answer {
+	display: block;
+	min-height: 200px;
+}
+
+#answer-button {
+	padding: 10px;
+	margin: 40px;
+}
