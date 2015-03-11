@@ -1,22 +1,28 @@
 var questions = [
 				 {	
-				 	question: 'Are you a...?',
+				 	question: 'Which family status or household best describes your situation?',
 				 	answers: [
 				 				{
-				 					ans: 'Parent in a 2-parent family',
+				 					ans: 'Two Parents with Children',
 				 					image: 'img/0-0.jpg',
 				 					by: 'oakleyoriginals',
 				 					url: 'https://www.flickr.com/photos/oakleyoriginals/8479540406'},
 				 				{
-				 					ans: 'Single Parent',
+				 					ans: 'Single Parent with One Child',
 				 					image: 'img/0-1.jpg',
 				 					by: 'mamchenkov',
 				 					url: 'https://www.flickr.com/photos/mamchenkov/2978202186'},
 				 				{
-				 					ans: 'Not a Parent',
+				 					ans: 'Living with a partner',
 				 					image: 'img/0-2.jpg',
 				 					by: 'freelancersunion',
 				 					url: 'https://www.flickr.com/photos/freelancersunion/4910942510'},
+				 				{
+				 					ans: 'Living alone',
+				 					image: 'img/0-3.jpg',
+				 					by: 'pigpilot',
+				 					url: 'https://www.flickr.com/photos/pigpilot/4963855714'},
+				 					
 				 				
 				 				]},
 				 {	
@@ -81,7 +87,7 @@ $(document).ready(function(){
 			content += '<label class="btn btn-quiz" id="answer-' +i + '-' + j + '">';
 			content += '<input type="radio" name="options" id="' +j + '">';
 			if (questions[i].answers[j].image) {
-				content += '<a href="' + questions[i].answers[j].url + '"><img class="img-rounded" src="' + questions[i].answers[j].image + '" data-toggle="tooltip" data-placement="left" title="Photo by ' + questions[i].answers[j].by + '" height="150"></a>';
+				content += '<a href="' + questions[i].answers[j].url + '"><img class="img-rounded" src="' + questions[i].answers[j].image + '" data-toggle="tooltip" data-placement="top" title="Photo by ' + questions[i].answers[j].by + '" height="150"></a>';
 			}
 			content += '<br><span class="ans">' + questions[i].answers[j].ans + '</span>';
 			content += '</input></label>';
@@ -132,6 +138,15 @@ $(document).ready(function(){
 		}
 		if (answers[0] == 1) {
 			answer += '<p><h3>On top of that, you\'re a single parent.</h3>There’s no doubt that life has got harder for you over the past five years. The cost of childcare <BR>has increased, single parents are now required to return to work sooner after the birth of their children, jobseeker’s <BR>allowance and housing benefit have been cut, and child benefit has been cut (?) in order to give <BR>tax allowances to married couples.The Tories and Liberal democrats have made no secret of the fact that <BR>their priority is  supporting married couples - but for single parents, that means more day-to-day struggle.</p>';
+		}
+		if (answers[0] == 2) {
+			answer += '<p><h3>You live with your partner and no children.</h3> The fifth decile makes a median 27,200 a year, the top decile makes 88,500 or more and the bottom decile makes 13,300 a year.</p>';
+		}
+		if (answers[0] == 3) {
+			answer += '<p><h3>You live alone.</h3> The fifth decile makes a median 17,600 a year, the top decile makes 60,500 or more and the bottom decile makes 8,600 a year.</p>';
+		}
+		if (answers[0]) {
+			answer += '<p class="small">Source: "<a href="http://www.theguardian.com/money/2014/mar/25/uk-incomes-how-salary-compare">UK incomes: how does your salary compare?</a>", The Guardian, 25 March, 2014.<BR> Based on HM Treasury official document "<a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/293738/budget_2014_distributional_analysis.pdf">Impact on households: distributional analysis to accompany Budget 2014</a>"</p>';
 		}
 		if (answers[1] == 0) {
 			answer += '<p><h3>You\'re a student.</h3> Your fees have tripled under the Conservatives and Liberal Democrats - despite the Lib Dem election promise to resist <BR>tuition fee hikes. The cost of getting a degree has xxx, and the likelihood of getting a good job at the end of it is <BR>far lower than it once was. XX of xx graduates were employed after 12 months, and only xx were paid above xxx.</p>';
