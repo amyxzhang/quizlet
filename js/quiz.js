@@ -53,6 +53,10 @@ $(document).ready(function(){
 		content += '</div></div>';
 	}
 	
+	$('.hand').click(function() {
+		$('#question-0').animatescroll();
+	});
+	
 	$('#question-space').html(content);
 	
 	for (var i = 0; i < questions.length; i++) {
