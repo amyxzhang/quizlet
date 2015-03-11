@@ -38,7 +38,13 @@ $(document).ready(function(){
 	
 	content = '';
 	for (var i = 0; i < questions.length; i++) {
-		content += '<div class="row span8 question-block" id="question-'  + i + '">';
+
+		if (i %2 ==0) {
+			content += '<div style="color: #ffffff; background-color: #35586C; position: relative; top: -42px; height: 105%;" class="wrapper">';
+		} else {
+			content += '<div style="position: relative; top: -42px; height: 105%;" class="wrapper">';
+		}
+		content += '<div  class="question-block" id="question-'  + i + '">';
 		content += questions[i].question;
 		content += '<br>';
 		content += '<div class="btn-group-vertical" data-toggle="buttons">';
@@ -50,7 +56,7 @@ $(document).ready(function(){
 			content += questions[i].answers[j].ans;
 			content += '</input></label>';
 		}
-		content += '</div></div>';
+		content += '</div></div></div>';
 	}
 	
 	$('.hand').click(function() {
