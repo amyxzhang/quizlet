@@ -111,6 +111,7 @@ $(document).ready(function(){
 		
 		$('#answer').html(answer);
 		
+		$('#ans-title').animatescroll();
 		return false;
 		
 	});

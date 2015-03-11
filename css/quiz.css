@@ -77,12 +77,12 @@ img {
 #answer {
 	display: block;
 	min-height: 400px;
-	margin: 20px;
-	padding: 20px;
+	margin-bottom: 80px;
 }
 
 #answer-button {
 	padding: 0px;
 	margin: 0px;
-	height: 200px;
+	padding-top: 90px;
+	height: 150px;
 }
