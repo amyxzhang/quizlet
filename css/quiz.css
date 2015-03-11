@@ -40,7 +40,7 @@ html, body {
 .hand:hover {
 	cursor: pointer;
 }
-.btn-group-vertical {
+.btn-group {
 	padding-top: 20px;
 }
 
@@ -59,6 +59,7 @@ html, body {
 	border: 1px #5E5E5E solid;
 	color: #000000;
 	font-size: 18px;
+	height: 250px;
 }
 
 .ans {

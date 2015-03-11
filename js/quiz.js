@@ -14,7 +14,9 @@ var questions = [
 				 					url: 'https://www.flickr.com/photos/mamchenkov/2978202186'},
 				 				{
 				 					ans: 'Not a Parent',
-				 					image: null},
+				 					image: 'img/0-2.jpg',
+				 					by: 'freelancersunion',
+				 					url: 'https://www.flickr.com/photos/freelancersunion/4910942510'},
 				 				
 				 				]},
 				 {	
@@ -27,7 +29,33 @@ var questions = [
 				 					url: 'https://www.flickr.com/photos/universbeeld/5447907854'},
 				 				{
 				 					ans: 'No',
-				 					image: null},
+				 					image: 'img/1-1.jpg',
+				 					by: '48698930@N04',
+				 					url: 'https://www.flickr.com/photos/48698930@N04/7637192644'},
+				 				] },
+				{	
+				 	question: 'What is your housing situation?',
+				 	answers: [
+				 				{
+				 					ans: 'Homeless',
+				 					image: 'img/2-0.jpg',
+				 					by: 'slrjester',
+				 					url: 'https://www.flickr.com/photos/slrjester/6272470480'},
+				 				{
+				 					ans: 'Renter',
+				 					image: 'img/2-1.jpg',
+				 					by: 'milestonemanagement',
+				 					url: 'https://www.flickr.com/photos/milestonemanagement/9392525901'},
+				 				{
+				 					ans: 'Homeowner',
+				 					image: 'img/2-2.jpg',
+				 					by: 'davidstanleytravel',
+				 					url: 'https://www.flickr.com/photos/davidstanleytravel/15271914123'},
+				 				{
+				 					ans: 'Landlord',
+				 					image: 'img/2-3.jpg',
+				 					by: 'niexecutive',
+				 					url: 'https://www.flickr.com/photos/niexecutive/15832074041'},
 				 				] },
 				];
 		
@@ -47,13 +75,13 @@ $(document).ready(function(){
 		content += '<div  class="question-block" id="question-'  + i + '">';
 		content += questions[i].question;
 		content += '<br>';
-		content += '<div class="btn-group-vertical" data-toggle="buttons">';
+		content += '<div class="btn-group" data-toggle="buttons">';
 		for (var j = 0; j < questions[i].answers.length; j++) {
 
 			content += '<label class="btn btn-quiz" id="answer-' +i + '-' + j + '">';
 			content += '<input type="radio" name="options" id="' +j + '">';
 			if (questions[i].answers[j].image) {
-				content += '<a href="' + questions[i].answers[j].url + '"><img class="img-rounded" src="' + questions[i].answers[j].image + '" data-toggle="tooltip" data-placement="left" title="Photo by ' + questions[i].answers[j].by + '" width="200"></a>';
+				content += '<a href="' + questions[i].answers[j].url + '"><img class="img-rounded" src="' + questions[i].answers[j].image + '" data-toggle="tooltip" data-placement="left" title="Photo by ' + questions[i].answers[j].by + '" height="150"></a>';
 			}
 			content += '<br><span class="ans">' + questions[i].answers[j].ans + '</span>';
 			content += '</input></label>';
@@ -106,7 +134,16 @@ $(document).ready(function(){
 			answer += '<p><h3>On top of that, you\'re a single parent.</h3>There’s no doubt that life has got harder for you over the past five years. The cost of childcare <BR>has increased, single parents are now required to return to work sooner after the birth of their children, jobseeker’s <BR>allowance and housing benefit have been cut, and child benefit has been cut (?) in order to give <BR>tax allowances to married couples.The Tories and Liberal democrats have made no secret of the fact that <BR>their priority is  supporting married couples - but for single parents, that means more day-to-day struggle.</p>';
 		}
 		if (answers[1] == 0) {
-			answer += '<p><h3>You’re a student.</h3> Your fees have tripled under the Conservatives and Liberal Democrats - despite the Lib Dem election promise to resist <BR>tuition fee hikes. The cost of getting a degree has xxx, and the likelihood of getting a good job at the end of it is <BR>far lower than it once was. XX of xx graduates were employed after 12 months, and only xx were paid above xxx.</p>';
+			answer += '<p><h3>You\'re a student.</h3> Your fees have tripled under the Conservatives and Liberal Democrats - despite the Lib Dem election promise to resist <BR>tuition fee hikes. The cost of getting a degree has xxx, and the likelihood of getting a good job at the end of it is <BR>far lower than it once was. XX of xx graduates were employed after 12 months, and only xx were paid above xxx.</p>';
+		}
+		if (answers[2] == 0) {
+			answer += '<p><h3>You\'re homeless.</h3> There are a lot more of homeless and precariously housed people like you in Britain in 2015 than there were in 2010.</p>';
+		}
+		if (answers[2] == 1) {
+			answer += '<p><h3>You\'re a renter.</h3> You rent rather than own your home. But rents have been rising faster than wages, and gas, electricity and water bills <BR>have If you’re a renter, your disposable income - the money you have left after you’ve paid your rent and bills</p>';
+		}
+		if (answers[2] == 3) {
+			answer += '<p><h3>You are a private landlord</h3> Congratulations! You are almost certainly richer now than you were in 2010. The housing crisis has fuelled an <BR>enormous rise in rent, and you can pick and choose your tenants.</p>';
 		}
 		
 		$('#answer').html(answer);
