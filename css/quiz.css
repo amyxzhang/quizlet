@@ -58,20 +58,31 @@ html, body {
 	background-color: #F5F5F5;
 	border: 1px #5E5E5E solid;
 	color: #000000;
+	font-size: 18px;
+}
+
+.ans {
+	width: 200px;
 }
 
 .btn-quiz.active {
-	background-color: #DDDDDD;
+	background-color: #A9A9A9;
 	border: 1px #5E5E5E solid;
 }
 
+img {
+	margin: 20px;
+}
 
 #answer {
 	display: block;
-	min-height: 200px;
+	min-height: 400px;
+	margin: 20px;
+	padding: 20px;
 }
 
 #answer-button {
 	padding: 0px;
 	margin: 0px;
+	height: 200px;
 }
